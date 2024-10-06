@@ -1,1 +1,1 @@
-#page https://forexamplednk.github.io/tabs/]
+#page https://forexamplednk.github.io/tabs/
