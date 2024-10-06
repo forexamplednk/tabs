@@ -7,16 +7,25 @@ let tabs = function(arrIDs) {
         li
   */
 
+  let closeAll = function(parent) {
+    let actives = parent.querySelectorAll('.active');
+    
+    actives.forEach(function(active) {
+      active.classList.remove('active');
+    });
+  }
+
   let active = function(current, index) {
     let parentDiv = current.closest('div');
 
     if (!parentDiv) return;
 
+    closeAll(parentDiv);
+
     let ulContentLi = parentDiv.querySelector(`ul:last-child li:nth-child(${index+1})`);
     
     ulContentLi.classList.add('active');
     current.classList.add('active');
-    // let ulContent = uls[1];
   }
 
   if (!arrIDs || arrIDs.length == 0) return;
@@ -31,12 +40,8 @@ let tabs = function(arrIDs) {
 
      let ulTab = uls[0];
      
-     
-
      let ulTabLi = ulTab.querySelectorAll('li');
      
-     
-
      ulTabLi.forEach(function(tabLi, index) {
        tabLi.addEventListener('click', function() {
         active(this, index); //index - li's index number 
