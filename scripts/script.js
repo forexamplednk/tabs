@@ -1,3 +1,3 @@
 window.addEventListener('load', function() {
-  tabs();
+  tabs(['tabs1']);
 })
